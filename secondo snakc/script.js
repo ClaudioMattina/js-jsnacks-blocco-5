@@ -36,25 +36,114 @@ let automobili= [
     },
 
     {
-        marca: "good",
+        marca: "Lamborghini",
         modello: "story",
         alimentazione: "gpl",
     },
     
     {
-        marca: "daje",
-        modello: "boh",
+        marca: "Ferrari",
+        modello: "cavallo",
         alimentazione: "metano",
     },
 
     {
-        marca: "punto",
-        modello: "punto",
+        marca: "Yaris",
+        modello: "ganza",
         alimentazione: "benzina",
     },
+
+    {
+        marca:"Mercedes",
+        modello:"wow",
+        alimentazione:"disel",
+    },
+
+    {
+        marca:"motard",
+        modello:"non lo so",
+        alimentazione:"benzina",
+    },
+
+    {
+        marca:"motana",
+        modello:"dajeee",
+        alimentazione:"gpl",
+    },
+
+    {
+        marca:"motina",
+        modello:"34456",
+        alimentazione:"benzina",
+    },
+
+    {
+        marca:"motorino",
+        modello:"aw237",
+        alimentazione:"metano",
+    },
+
+    {
+        marca:"wowww",
+        modello:"fhgot",
+        alimentazione:"disel",
+    }
 ]
 
-let autoMetano= automobili.filter((Element) => {
+
+
+/* creo un'array uguale all'array "automobili" ma gli elementi saranno filtrati in base al tipo di elemento.alimentazione */
+let autoBenzina = automobili.filter((Element) => {
+    if(Element.alimentazione == "benzina") return true    /* se elemento chiamato alimentazione è uguale a benzina, allora "true" ovvero inseriscilo*/
+});
+
+
+/* uguale con disel */
+let autoDisel = automobili.filter((Element) =>{
+    if(Element.alimentazione == "disel") return true
+});
+
+
+/* in tutti gli altri casi */
+let others = automobili.filter((Element) => {
+    if(Element.alimentazione !== "benzina" && Element.alimentazione !== "disel") return true /* se l'elemento alimentazione è diverso da benzina e diverso da disel.. allora inseriscilo */
+});
+
+
+
+console.table(autoBenzina);
+console.table(autoDisel);
+console.table(others);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* let autoMetano= automobili.filter((Element) => {
         if(automobili[4].alimentazione == "metano"){
             return true
         }
@@ -67,4 +156,4 @@ let autoMetano= automobili.filter((Element) => {
 
 
 
-console.log(autoMetano)
+console.log(autoMetano) */
