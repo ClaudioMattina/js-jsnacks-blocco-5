@@ -13,22 +13,70 @@
 
 
 
-let statiscticheGiocatore = [
+
+
+const giocatore=[
     {   
-        codiceGiocatore: "",
-        nome: "",
-        cognome: "",
-        età: "",
-        mediaPunti: "",
-        media: "",
+        codiceGiocatore:"",
+        nome:"ciccio",
+        cognome:"pasticcio",
+        età:"26",
+        mpp:"",
+        ptc3:"",
     }
     
-];
+]
 
 
-let newStatiscticheGiocatore = statiscticheGiocatore.map((element) =>{
-            statiscticheGiocatore.forEach(element).codiceGiocatore{
+/* creo una funzione che crei randomicamente 3 lettere e 3 numeri */
+function playerCodeGenerator(){
+   /*  let chartPart = makeid(3)
+    let numberPart = makeidNumber(3) */
+    return makeid(3) + makeidNumber(3)
+};
 
-            }
-})
-console.log(statiscticheGiocatore)
+console.log(playerCodeGenerator())  /* importanti le parantesi vuote vicino il "plaerCodeGenerator".. altrimenti fa vedere la funzione e non il risultato */
+
+
+giocatore.codiceGiocatore = playerCodeGenerator();
+console.log(giocatore.codiceGiocatore);
+
+giocatore.mpp = Math.floor(Math.random() * ((50 + 1) -  0) + 0);      /* genera un numero random da 0 a 50 */
+
+giocatore.ptc3 = Math.floor(Math.random() * ((100 + 1) -  0) + 0);     /* stessa cosa è però da 0 a 100 */
+
+
+console.log(giocatore)
+
+
+
+/* *************************************** FUNZIONIIIIIII *************************************** */
+
+
+/* funzione presa da google */
+/* crea tre variabili.. una che è il risultato, una che mette i caratteri tra cui il pc ne sceglierà randomicamente ed una che specifica la lunghezza */
+function makeid(length) {
+    let result           = '';
+    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';      /* abcdefghijklmnopqrstuvwxyz0123456789 */
+    let charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
+}
+
+
+/* funzione che prenderà in considerazione solo i numeri che gli abbiamo dato */
+function makeidNumber(length) {
+    let result           = '';
+    let characters       = '0123456789';      /* ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz */
+    let charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
+}
+
+/* ************************************************************************************************** */
